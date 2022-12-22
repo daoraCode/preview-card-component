@@ -136,9 +136,14 @@ p {
 
 /* applied when landscape orientation mobile device's turned on */
 @media (max-width: 850px) and (orientation: landscape) {
+    .img-container {
+        height: 80px;
+    }
+
     .card-container {
         flex-direction: row;
         margin-top: 18em;
+        margin-left: 17.05px;
     }
 
     .button-container .main-button {
@@ -147,7 +152,7 @@ p {
 
     .card {
         width: 258.99px;
-        padding: 55px;
+        padding: 45px;
         gap: 3em;
         border-radius: none;
     }

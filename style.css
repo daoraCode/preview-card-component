@@ -1,3 +1,4 @@
+/* get rid of extra margins and paddings */
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +21,6 @@ img {
     /* font-weight */
     --font-weight-regular-lexend:400;
     --font-weight-bold-soulders: 700;
-
 }
 
 body {
@@ -49,8 +49,8 @@ p {
     align-self: center;
     display: flex;
 
-    /* no need */
-    /* width: 900px; */
+    /* -- no need property -- /
+    /* -- width: 900px; --  */
 
     height: 650px;
     padding: 30px;
@@ -81,9 +81,17 @@ p {
     font-family: 'Lexend Deca', sans-serif;
     background-color: #fff;
     color: var(--bright-orange);
+    font-size: 15px;
     padding: 20px 40px;
     border-radius: 50px;
     border: none;
+    cursor: pointer;
+    transition: all .22s ease-in-out;
+}
+
+.main-button:hover {
+    transform: scale(1.16);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .card-container .card-2 .main-button {
@@ -100,17 +108,17 @@ p {
 }
 
 .card-container .card-3 {
-    border-radius: none;
+    border-radius: 0 18px 18px 0;
     background-color: var(--dark-dark-cyan);
 }
 
 .card-container .card-2 {
-    border-radius: 0 18px 18px 0;
     background-color: var(--dark-cyan);
 }
 
 /* media queries css */
-@media (max-width: 1080px) {
+/* below 1080px */
+@media (max-width: 1045px) and (orientation: portrait) {
     .card-container {
         margin: auto;
         flex-direction: column;
@@ -121,7 +129,35 @@ p {
         border-radius: 18px 18px 0 0;
     }
 
-    .card-container .card-2 {
+    .card-container .card-3 {
         border-radius: 0 0 18px 18px;
     }
 }
+
+/* applied when landscape orientation mobile device's turned on */
+@media (max-width: 850px) and (orientation: landscape) {
+    .card-container {
+        flex-direction: row;
+        margin-top: 18em;
+    }
+
+    .button-container .main-button {
+        padding: 13px 26px;
+    }
+
+    .card {
+        width: 258.99px;
+        padding: 55px;
+        gap: 3em;
+        border-radius: none;
+    }
+
+    .card h1 {
+        font-size: 24.95px;
+    }
+
+    .card p {
+        font-size: 13.95px;
+    }
+}
+
